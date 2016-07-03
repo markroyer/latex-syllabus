@@ -1,0 +1,314 @@
+% This syllabus template was created by:
+% Brian R. Hall
+% Assistant Professor, Champlain College
+% www.brianrhall.net
+% And modified extensively by Mark Royer
+
+% Document settings
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[margin=1in]{geometry}
+\usepackage[pdftex]{graphicx}
+\usepackage{multirow}
+\usepackage{setspace}
+\usepackage{termcal}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{tabularx}
+
+\usepackage{lstcustom}
+
+\pagestyle{plain}
+\setlength\parindent{0pt}
+
+\hypersetup{%
+  colorlinks=true,% hyperlinks will be coloured
+  linkcolor=green,% hyperlink text will be green
+  linkbordercolor=red,% hyperlink border will be red
+}
+
+
+% Few useful commands (our classes always meet either on Monday and Wednesday 
+% or on Tuesday and Thursday)
+
+\newcommand{\MWClass}{%
+\calday[Monday]{\classday} % Monday
+\skipday % Tuesday (no class)
+\calday[Wednesday]{\classday} % Wednesday
+\skipday % Thursday (no class)
+\skipday % Friday 
+\skipday\skipday % weekend (no class)
+}
+
+\newcommand{\MWFClass}{%
+\calday[Monday]{\classday} % Monday
+\skipday % Tuesday (no class)
+\calday[Wednesday]{\classday} % Wednesday
+\skipday % Thursday (no class)
+\calday[Friday]{\classday} % Friday
+\skipday\skipday % weekend (no class)
+}
+
+\newcommand{\TRClass}{%
+\skipday % Monday (no class)
+\calday[Tuesday]{\classday} % Tuesday
+\skipday % Wednesday (no class)
+\calday[Thursday]{\classday} % Thursday
+\skipday % Friday 
+\skipday\skipday % weekend (no class)
+}
+
+\newcommand{\Holiday}[2]{%
+\options{#1}{\noclassday}
+\caltext{#1}{#2 (No Class)}
+}
+
+\newcommand{\Test}[2]{%
+\caltext{#1}{\textbf{#2}}
+}
+
+\begin{document}
+
+
+% Course information
+\begin{tabularx}{\textwidth}{ l r }
+  \large COS 221 & \multirow{3}{*}{\includegraphics[height=.9in]{umaine.pdf}} \\ 
+  \large Data Structures in C++ &  \\
+  \large MWF, 8-8:50AM, Neville Hall 227 & \\\\
+  \large Mark Royer & \multirow{6}{*} {\includegraphics[height=.9in]{csLogo.pdf}} \\
+  \large \href{mailto:mroyer@cs.umaine.edu}{mroyer@cs.umaine.edu} & \\
+  \large \url{http://cs.umaine.edu/~mroyer} & \\
+  \large East Annex 223 \& 225 & \\
+  \large Office Hours: MW 1-4pm & \\
+  \large (207) 555-1234 & \\
+\end{tabularx}
+\vspace{5mm}
+
+\noindent
+This syllabus contains a rough outline of the course and may change in
+the future.  If you have any questions, you should check with me. \\
+
+% Course details
+\textbf {\large \\ Course Description:} This course covers C++
+programming techniques with classes and dynamic memory management
+through the study of common data structures such as lists, stacks,
+queues, and trees.  Sorting and searching algorithms are discussed.
+
+\textbf {Prerequisite(s):} COS 220 or ECE 177
+
+\textbf {Credit Hours:} 3 \\
+
+\textbf {\large Text(s):} \emph{Introduction to Programming with C++,
+  Second Edition}, 3\textsuperscript{rd} Edition
+
+\textbf {Author(s):} Y. Daniel Liang;  \textbf {ISBN-13:} 978-0-13-325281-1 \\
+
+% I recommend using \newpage here if necessary
+\textbf {\large Grade Distribution:} \\
+\hspace*{40mm}
+\begin{tabular}{ l l }
+Class Participation & 5\% \\
+Assignments & 35\% \\
+Quizzes(2)  & 10\% \\
+Midterm Exams(2)  & 20\% \\
+Final Exam  & 30\%
+\end{tabular} \\\\
+
+\textbf {\large Letter Grade Distribution:} \\\\
+\hspace*{40mm}
+\begin{tabular}{ l l | l l }
+\textgreater= 93.00 & A & 73.00 - 76.99 & C \\
+90.00 - 92.99 & A-  & 70.00 - 72.99 & C- \\
+87.00 - 89.99 & B+  & 67.00 - 69.99 & D+ \\
+83.00 - 86.99 & B  & 63.00 - 66.99 & D \\
+80.00 - 82.99 & B-  & 60.00 - 62.99 & D- \\
+77.00 - 79.99 & C+  & \textless= 59.99 & F \\
+\end{tabular} \\
+
+% Course Policies. These are just examples, modify to your liking.
+\textbf {\large Course Policies:}
+\begin{itemize}
+\item \textbf {General}
+  \begin{itemize}
+  \item \textbf {No makeup quizzes or exams will be given.}
+  \end{itemize}
+\item \textbf {Assignments}
+  \begin{itemize}
+  \item Students are expected to work independently. \textbf{Offering}
+    and \textbf{accepting} solutions from others is an act of
+    \textbf{plagiarism}, which is a serious offense and \textbf{all
+      involved parties will be penalized according to the Academic
+      Honesty Policy}. Discussion among students is encouraged, but
+    when in doubt, ask me.
+  \item \textbf{Late assignments will lose 30\% every week late.
+    Students must hand in every assignment}.
+  \end{itemize}
+\item \textbf{Attendance and Absences}
+  \begin{itemize}
+  \item Students are responsible for all missed work, regardless of
+    the reason for absence. It is also the absentee's responsibility
+    to get all missing notes or materials.
+  \end{itemize}
+\end{itemize}
+
+% College Policies
+\textbf {\large Academic Honesty Policy Summary:} 
+% This should be specific to your instituition, an example is provided.
+
+\textbf{Introduction}
+
+\hspace{3mm} \hangindent=5mm In addition to skills and knowledge, The
+University of Maine aims to teach students appropriate Ethical and
+Professional Standards of Conduct. The Academic Honesty Policy exists
+to inform students and Faculty of their obligations in upholding the
+highest standards of professional and ethical integrity. All student
+work is subject to the Academic Honesty Policy. Professional and
+Academic practice provides guidance about how to properly cite,
+reference, and attribute the intellectual property of others. Any
+attempt to deceive a faculty member or to help another student to do
+so will be considered a violation of this standard.
+
+\textbf{Instructor's Intended Purpose}
+
+\hspace{3mm} \hangindent=5mm The student's work must match the
+intended purpose for an assignment. Each student must clarify
+outstanding questions of that intent for a given assignment.
+
+\textbf{Unauthorized/Excessive Assistance}
+
+\hspace{3mm} \hangindent=5mm The student may not give or get any
+unauthorized or excessive assistance in the preparation of any work.
+
+\textbf{Authorship}
+
+\hspace{3mm} \hangindent=5mm The student must clearly establish
+authorship of a work. Referenced work must be clearly documented,
+cited, and attributed, regardless of media or distribution. Even in
+the case of work licensed as public domain or Copyleft, (See:
+http://creativecommons.org/) the student must provide attribution of
+that work in order to uphold the standards of intent and authorship.
+
+\textbf{Declaration}
+
+\hspace{3mm} \hangindent=5mm Online submission of, or placing one's
+name on an exam, assignment, or any course document is a statement of
+academic honor that the student has not received or given
+inappropriate assistance in completing it and that the student has
+complied with the Academic Honesty Policy in that work.
+
+The full text of the Academic Honesty Policy is in the \emph{Student Handbook}.
+
+% Course Outline
+\textbf {\large Tentative Course Outline}:
+
+\begin{enumerate}
+\item Programming environment/tools, Ubuntu VirtualBox image, gEdit, Makefile/gcc/make, DDD
+\item Pointers and Memory (\lstinline$new$/\lstinline$delete$),
+  Chapter 11 (Pointers and Dynamic Memory)
+\item Classes/Objects/Constructors and Destructors, Chapter 9 (Objects
+  and Classes), Chapter 10 (Object-Oriented Thinking)
+\item Dynamic Data Structures (lists/stacks/queues/trees), Chapter 12
+  (Templates, Vectors and Stacks), Chapter 20 (Linked Lists, Queues
+  and Priority Queues), Chapter 21 (Binary Search Trees)
+\item File IO (text/binary), \lstinline$fstream, <<, >>, endl$, Chapter 13.1-13.6
+\item Sorting and Searching (algorithm efficiency), Chapter 19
+  (Sorting), Chapter 21 (Binary Search Trees)
+\item STL/Templates, Chapter 12 (Templates, Vectors and Stacks)
+\item Inheritance, Chapter 15 (Inheritance and Polymorphism)
+\item Bitwise operators/ASCII Codes \lstinline$&, |, ^, ~, <<, >>, >>>$
+\item Hashing
+\end{enumerate}
+
+Class dates with quizzes and tests are shown below.  These dates are
+unlikely to change.  The details of what will be covered during other
+classes will be filled out as the class progresses.
+
+
+
+\paragraph*{Tentative Schedule:}
+\begin{center}
+\begin{calendar}{9/2/2013}{16} % Semester starts on 9/3/2013 and last for 16
+                    % weeks, including finals week
+\setlength{\calboxdepth}{.3in}
+\MWFClass
+% schedule
+%\caltexton{1}{Labor Day - No class}
+\caltexton{1}{Review}
+\caltextnext{Makefile,Doxygen,DDD}
+\caltextnext{Introduction to pointers 11.1 - 11.6}
+\caltextnext{More memory 11.7 - 11.9}
+\caltextnext{Classes 9.1 - 9.7}
+\caltextnext{Classes 9.8-9.11, Dynamic 11.10-11.15}
+\caltextnext{OO Thinking 10.1-10.6}
+\caltextnext{Class Design 10.7-10.10}
+\caltextnext{Intro To Templates 12.1-12.5}
+\caltextnext{Templates 12.6-12.10}
+\caltextnext{Stacks,Vector 12.6-12.10}
+\caltextnext{LinkedList 20.1-20.4}
+\caltextnext{Recursion 17.1-17.4}
+\caltextnext{Recursion 17.5-17.8}
+\caltextnext{Analyzing Algorithms 18.1-18.3}
+\caltextnext{Analyzing Algorithms 18.4-18.7}
+\caltexton{18}{Exam Review}
+\caltextnext{Operator overloading 14.1-14.12}
+\caltextnext{Analyzing Algorithms}
+\caltextnext{Sorting 19.1-19.4}
+\caltextnext{Sorting 19.5-19.6}
+\caltextnext{Sorting 19.7}
+\caltextnext{File I/O 13.1-13.6}
+\caltextnext{File I/O 13.7-13.9}
+\caltextnext{Sorting 19.8}
+\caltextnext{Iterators, Queues 20.5-20.8}
+\caltextnext{Priority Queues 20.9}
+\caltextnext{Inheritance 15.1-15.3}
+\caltextnext{Inheritance 15.4-15.10}
+\caltextnext{Binary Search Trees 21.1-21.2}
+\caltextnext{AVL Trees 26.1-26.4}
+\caltextnext{AVL Trees 26.5-26.9}
+\caltextnext{Review}
+\caltexton{36}{Finish AVL Trees}
+\caltextnext{Splay Trees 26.10}
+\caltextnext{More splay trees}
+\caltextnext{Graphs 24.1-24.3}
+
+\caltextnext{Graphs 24.4-24.7}
+\caltextnext{Review}
+
+% ... and so on
+
+% Tests and quizes
+\Test{9/20/2013}{Quiz 1}
+\Test{10/11/2013}{Exam 1}
+\Test{11/1/2013}{Quiz 2}
+\Test{11/25/2013}{Exam 2}
+
+% Important dates
+\caltext{9/9/2013}{Last day to add class}
+\caltext{9/16/2013}{Last day to drop class}
+\caltext{11/15/2013}{Last day to withdraw}
+
+% Holidays
+\Holiday{9/2/2013}{Labor Day}
+\Holiday{10/14/2013}{Fall break}
+\Holiday{11/27/2013}{Thanksgiving}
+\Holiday{11/29/2013}{Thanksgiving}
+% ... and so on
+
+\options{12/16/2013}{\noclassday} % finals week
+\options{12/17/2013}{\noclassday} % finals week
+\options{12/18/2013}{\noclassday} % finals week
+\options{12/19/2013}{\noclassday} % finals week
+\options{12/20/2013}{\noclassday} % finals week
+
+\Test{12/16/2013}{Final Exam 9:30 AM}
+\end{calendar}
+\end{center}
+
+\end{document}
+
+
+
+
+%  LocalWords:  MWF Neville ECE Liang VirtualBox gEdit DDD fstream OO
+%  LocalWords:  Destructors endl STL Polymorphism Bitwise Doxygen AVL
+%  LocalWords:  LinkedList
