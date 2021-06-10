@@ -1,11 +1,14 @@
 NAME=syllabus
 
-pdf: $(NAME).pdf
+.PHONY=clean
 
 $(NAME).pdf: $(NAME).tex
-	pdflatex $(NAME).tex
-	# Run latex twice for references
-	pdflatex $(NAME).tex
+	latexmk -pdf -shell-escape $(NAME).tex
+
 
 clean:
-	@rm -f *~ $(NAME).aux $(NAME).log $(NAME).out $(NAME).pdf 
+	latexmk -c $(NAME).tex
+	rm -f *~ $(NAME).aux $(NAME).log $(NAME).out
+
+squeeky-clean: clean
+	rm -f $(NAME).pdf
