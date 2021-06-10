@@ -3,5 +3,14 @@
 *.log
 *.out
 auto/
+svg-inkscape/
+syllabus.4ct
+syllabus.4tc
+syllabus.css
+syllabus.dvi
+syllabus.html
+syllabus.idv
+syllabus.lg
 syllabus.pdf
-
+syllabus.tmp
+syllabus.xref
