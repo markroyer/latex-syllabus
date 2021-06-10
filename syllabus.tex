@@ -67,15 +67,24 @@
 \caltext{#1}{\textbf{#2}}
 }
 
+\newcommand{\tf}[1]{%
+  \large\textbf{#1}
+}
+
 \begin{document}
 
 
 % Course information
-\begin{tabularx}{\textwidth}{ l r }
-  \large COS 221 & \multirow{3}{*}{\includegraphics[height=.9in]{umaine.pdf}} \\ 
-  \large Data Structures in C++ &  \\
-  \large MWF, 8-8:50AM, Neville Hall 227 & \\\\
-  \large Mark Royer & \multirow{6}{*} {\includegraphics[height=.9in]{csLogo.pdf}} \\
+%\setlength\tabcolsep{0pt}
+\begin{tabularx}{\textwidth}{@{}l@{}X@{}r@{}}
+  \tf{COS 221}
+  & \multirow{3}{*}{} % White space hfill column
+  & \multirow{3}{*}{\hfill\includegraphics[height=.9in]{umaine.pdf}} \\ 
+  \tf{Data Structures in C++} &  \\
+  \tf{MWF, 8-8:50AM, Neville Hall 227} & \\\\
+  \large Mark Royer
+  & \multirow{6}{*}{} % White space hfill column
+  & \multirow{6}{*} {\includegraphics[height=1.25in]{csLogo.pdf}} \\
   \large \href{mailto:mark.royer@maine.edu}{mark.royer@maine.edu} & \\
   \large \url{http://cs.umaine.edu/~mroyer} & \\
   \large East Annex 223 \& 225 & \\
