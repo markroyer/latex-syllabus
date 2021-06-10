@@ -1,14 +1,14 @@
-NAME=syllabus
+name=syllabus
 
 .PHONY=clean
 
-$(NAME).pdf: $(NAME).tex
-	latexmk -pdf -shell-escape $(NAME).tex
+$(name).pdf: $(name).tex
+	latexmk -pdf -shell-escape $(name).tex
 
 
 clean:
-	latexmk -c $(NAME).tex
-	rm -f *~ $(NAME).aux $(NAME).log $(NAME).out
-
-squeeky-clean: clean
-	rm -f $(NAME).pdf
+	latexmk -c $(name).tex
+	rm -rf *~ auto/ svg-inkscape/ \
+	$(addprefix $(NAME),.4ct .4tc .css .dvi .fdb_latexmk .fls.html .idv .lg .tmp .xref)
+squeaky-clean: clean
+	rm -f $(name).pdf
