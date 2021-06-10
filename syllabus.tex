@@ -19,12 +19,13 @@
 \usepackage{lstcustom}
 
 \pagestyle{plain}
-\setlength\parindent{0pt}
+
+\definecolor{turner-blue}{HTML}{001b8f}
 
 \hypersetup{%
-  colorlinks=true,% hyperlinks will be coloured
-  linkcolor=green,% hyperlink text will be green
-  linkbordercolor=red,% hyperlink border will be red
+  colorlinks=true,
+  linkcolor=turner-blue,
+  urlcolor=turner-blue
 }
 
 
@@ -74,141 +75,155 @@
 \begin{document}
 
 
-% Course information
-%\setlength\tabcolsep{0pt}
+{ % Don't indent the table
+\setlength\parindent{0pt}
 \begin{tabularx}{\textwidth}{@{}l@{}X@{}r@{}}
   \tf{COS 221}
   & \multirow{3}{*}{} % White space hfill column
-  & \multirow{3}{*}{\hfill\includegraphics[height=.9in]{umaine.pdf}} \\ 
+  & \multirow{3}{*}{\includegraphics[height=.9in]{umaine}} \\ 
   \tf{Data Structures in C++} &  \\
   \tf{MWF, 8-8:50AM, Neville Hall 227} & \\\\
   \large Mark Royer
   & \multirow{6}{*}{} % White space hfill column
-  & \multirow{6}{*} {\includegraphics[height=1.25in]{csLogo.pdf}} \\
+  & \multirow{6}{*} {\includegraphics[height=1in]{csLogo.pdf}} \\
   \large \href{mailto:mark.royer@maine.edu}{mark.royer@maine.edu} & \\
   \large \url{http://cs.umaine.edu/~mroyer} & \\
   \large East Annex 223 \& 225 & \\
   \large Office Hours: MW 1-4pm & \\
   \large (207) 555-1234 & \\
 \end{tabularx}
-\vspace{5mm}
+} % End parindent 0
+\subsection*{Note}
+\label{sec:note}
 
-\noindent
 This syllabus contains a rough outline of the course and may change in
-the future.  If you have any questions, you should check with me. \\
+the future.  If you have any questions, you should check with me.
 
-% Course details
-\textbf {\large \\ Course Description:} This course covers C++
-programming techniques with classes and dynamic memory management
-through the study of common data structures such as lists, stacks,
-queues, and trees.  Sorting and searching algorithms are discussed.
+\section*{Course Description}
+\label{sec:desc}
+This course covers C++ programming techniques with classes and dynamic
+memory management through the study of common data structures such as
+lists, stacks, queues, and trees.  Sorting and
+searching algorithms are discussed. \\
 
-\textbf {Prerequisite(s):} COS 220 or ECE 177
+\tf{Prerequisite(s):} COS 220 or ECE 177 \\
 
-\textbf {Credit Hours:} 3 \\
+\tf{Credit Hours:} 3 \\
 
-\textbf {\large Text(s):} \emph{Introduction to Programming with C++,
-  Second Edition}, 3\textsuperscript{rd} Edition
+\tf{Text:} \emph{Introduction to Programming with C++}, 3\textsuperscript{rd} Edition
 
-\textbf {Author(s):} Y. Daniel Liang;  \textbf {ISBN-13:} 978-0-13-325281-1 \\
+\tf{Author:} Y. Daniel Liang
 
-% I recommend using \newpage here if necessary
-\textbf {\large Grade Distribution:} \\
-\hspace*{40mm}
-\begin{tabular}{ l l }
-Class Participation & 5\% \\
-Assignments & 35\% \\
-Quizzes(2)  & 10\% \\
-Midterm Exams(2)  & 20\% \\
-Final Exam  & 30\%
-\end{tabular} \\\\
+\tf{ISBN-13:} 978-0-13-325281-1
 
-\textbf {\large Letter Grade Distribution:} \\\\
-\hspace*{40mm}
-\begin{tabular}{ l l | l l }
-\textgreater= 93.00 & A & 73.00 - 76.99 & C \\
-90.00 - 92.99 & A-  & 70.00 - 72.99 & C- \\
-87.00 - 89.99 & B+  & 67.00 - 69.99 & D+ \\
-83.00 - 86.99 & B  & 63.00 - 66.99 & D \\
-80.00 - 82.99 & B-  & 60.00 - 62.99 & D- \\
-77.00 - 79.99 & C+  & \textless= 59.99 & F \\
-\end{tabular} \\
+\subsection*{Grade Distribution:}
+\label{sec:grades}
 
-% Course Policies. These are just examples, modify to your liking.
-\textbf {\large Course Policies:}
+\begin{center}
+  \begin{tabular}{ l l }
+    Class Participation & 5\% \\
+    Assignments & 35\% \\
+    Quizzes(2)  & 10\% \\
+    Midterm Exams(2)  & 20\% \\
+    Final Exam  & 30\%
+  \end{tabular}
+\end{center}
+
+\subsection*{Letter Grade Distribution:}
+\label{sec:lettergrades}
+
+\begin{center}
+  \begin{tabular}{ l l | l l }
+    \textgreater= 93.00 & A & 73.00 - 76.99 & C \\
+    90.00 - 92.99 & A-  & 70.00 - 72.99 & C- \\
+    87.00 - 89.99 & B+  & 67.00 - 69.99 & D+ \\
+    83.00 - 86.99 & B  & 63.00 - 66.99 & D \\
+    80.00 - 82.99 & B-  & 60.00 - 62.99 & D- \\
+    77.00 - 79.99 & C+  & \textless= 59.99 & F \\
+  \end{tabular}  
+\end{center}
+
+\section*{Course Policies:}
+\label{sec:policies}
+
 \begin{itemize}
-\item \textbf {General}
-  \begin{itemize}
-  \item \textbf {No makeup quizzes or exams will be given.}
-  \end{itemize}
+\item \textbf {General:} \textbf {No makeup} quizzes or exams will be
+  given.
 \item \textbf {Assignments}
   \begin{itemize}
   \item Students are expected to work independently. \textbf{Offering}
     and \textbf{accepting} solutions from others is an act of
     \textbf{plagiarism}, which is a serious offense and \textbf{all
-      involved parties will be penalized according to the Academic
-      Honesty Policy}. Discussion among students is encouraged, but
-    when in doubt, ask me.
+      involved parties will be penalized according to the Academic Honesty
+      Policy}. Discussion among students is encouraged, but when in doubt,
+    ask me.
   \item \textbf{Late assignments will lose 30\% every week late.
-    Students must hand in every assignment}.
+      Students must hand in every assignment}.
   \end{itemize}
 \item \textbf{Attendance and Absences}
   \begin{itemize}
   \item Students are responsible for all missed work, regardless of
-    the reason for absence. It is also the absentee's responsibility
-    to get all missing notes or materials.
+    the reason for absence.
+  \item It is also the absentee's responsibility to get all missing
+    notes or materials.
   \end{itemize}
 \end{itemize}
 
-% College Policies
-\textbf {\large Academic Honesty Policy Summary:} 
+\section*{Academic Honesty Policy Summary:}
+\label{sec:honesty}
 % This should be specific to your instituition, an example is provided.
 
-\textbf{Introduction}
+\subsection*{Introduction}
+\label{sec:honesty-intro}
 
-\hspace{3mm} \hangindent=5mm In addition to skills and knowledge, The
-University of Maine aims to teach students appropriate Ethical and
-Professional Standards of Conduct. The Academic Honesty Policy exists
-to inform students and Faculty of their obligations in upholding the
-highest standards of professional and ethical integrity. All student
-work is subject to the Academic Honesty Policy. Professional and
-Academic practice provides guidance about how to properly cite,
-reference, and attribute the intellectual property of others. Any
-attempt to deceive a faculty member or to help another student to do
-so will be considered a violation of this standard.
+In addition to skills and knowledge, The University of Maine aims to
+teach students appropriate Ethical and Professional Standards of
+Conduct. The Academic Honesty Policy exists to inform students and
+Faculty of their obligations in upholding the highest standards of
+professional and ethical integrity. All student work is subject to the
+Academic Honesty Policy. Professional and Academic practice provides
+guidance about how to properly cite, reference, and attribute the
+intellectual property of others. Any attempt to deceive a faculty
+member or to help another student to do so will be considered a
+violation of this standard.
 
-\textbf{Instructor's Intended Purpose}
+\subsection*{Instructor's Intended Purpose}
+\label{sec:honesty-purp}
 
-\hspace{3mm} \hangindent=5mm The student's work must match the
-intended purpose for an assignment. Each student must clarify
-outstanding questions of that intent for a given assignment.
+The student's work must match the intended purpose for an
+assignment. Each student must clarify outstanding questions of that
+intent for a given assignment.
 
-\textbf{Unauthorized/Excessive Assistance}
+\subsection*{Unauthorized/Excessive Assistance}
+\label{sec:honest-assist}
 
-\hspace{3mm} \hangindent=5mm The student may not give or get any
-unauthorized or excessive assistance in the preparation of any work.
+The student may not give or get any unauthorized or excessive
+assistance in the preparation of any work.
 
-\textbf{Authorship}
+\subsection*{Authorship}
+\label{sec:honesty-auth}
 
-\hspace{3mm} \hangindent=5mm The student must clearly establish
-authorship of a work. Referenced work must be clearly documented,
-cited, and attributed, regardless of media or distribution. Even in
-the case of work licensed as public domain or Copyleft, (See:
-http://creativecommons.org/) the student must provide attribution of
-that work in order to uphold the standards of intent and authorship.
+The student must clearly establish authorship of a work. Referenced
+work must be clearly documented, cited, and attributed, regardless of
+media or distribution. Even in the case of work licensed as public
+domain or Copyleft, (See: http://creativecommons.org/) the student
+must provide attribution of that work in order to uphold the standards
+of intent and authorship.
 
-\textbf{Declaration}
+\subsection*{Declaration}
+\label{sec:honesty-dec}
 
-\hspace{3mm} \hangindent=5mm Online submission of, or placing one's
-name on an exam, assignment, or any course document is a statement of
-academic honor that the student has not received or given
-inappropriate assistance in completing it and that the student has
-complied with the Academic Honesty Policy in that work.
+Online submission of, or placing one's name on an exam, assignment, or
+any course document is a statement of academic honor that the student
+has not received or given inappropriate assistance in completing it
+and that the student has complied with the Academic Honesty Policy in
+that work.
 
-The full text of the Academic Honesty Policy is in the \emph{Student Handbook}.
+The full text of the Academic Honesty Policy is in the \emph{Student
+  Handbook}.
 
-% Course Outline
-\textbf {\large Tentative Course Outline}:
+\section*{Tentative Course Outline:}
+\label{sec:outline}
 
 \begin{enumerate}
 \item Programming environment/tools, Ubuntu VirtualBox image, gEdit, Makefile/gcc/make, DDD
@@ -233,15 +248,16 @@ unlikely to change.  The details of what will be covered during other
 classes will be filled out as the class progresses.
 
 
+\section*{Tentative Schedule:}
+\label{sec:sched}
 
-\paragraph*{Tentative Schedule:}
 \begin{center}
 \begin{calendar}{9/2/2013}{16} % Semester starts on 9/3/2013 and last for 16
                     % weeks, including finals week
 \setlength{\calboxdepth}{.3in}
 \MWFClass
 % schedule
-%\caltexton{1}{Labor Day - No class}
+%\caltexton{1}{Labor Day - No class} DON'T NEED THIS HOLIDAYS DECLARED BELOW
 \caltexton{1}{Review}
 \caltextnext{Makefile,Doxygen,DDD}
 \caltextnext{Introduction to pointers 11.1 - 11.6}
