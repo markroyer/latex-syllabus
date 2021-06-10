@@ -2,5 +2,6 @@
 *.aux
 *.log
 *.out
+auto/
 syllabus.pdf
 
