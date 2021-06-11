@@ -1,6 +1,6 @@
 name=syllabus
 
-.PHONY=clean
+.PHONY: clean squeaky-clean
 
 $(name).pdf: $(name).tex
 	latexmk -pdf -shell-escape $(name).tex
