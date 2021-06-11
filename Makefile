@@ -1,6 +1,6 @@
 name=syllabus
 
-dockerimage:=registry.gitlab.com/mark.e.royer/texlive-full-with-emacs:20200604
+dockerimage:=registry.gitlab.com/mark.e.royer/texlive-full-with-emacs:20210611
 dockeropts:=-u 1000:1000 -w /test \
             -v $(CURDIR):/test \
             -v /etc/group:/etc/group:ro \
