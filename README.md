@@ -7,18 +7,38 @@ contains many standard components including a semester calendar.
 
 ## Setup
 
-Make sure that you have the Debian `texlive` package installed.
+### Option 1: Docker
+
+Install Docker https://www.docker.com/
+
+### Option 2: Debian
+
+If you are using Debian make sure the `texlive` and `inkscape` packages are installed.
 
 ## Usage
 
+### Option 1: Docker
+
 You can build the syllabus by typing
+
+```
+make startdocker-build
+```
+
+in the root of the repository. The file `syllabus.pdf` is the
+generated output.
+
+### Option 2: Debian
+
+Typing
 
 ```
 make
 ```
 
-in the root of the repository. The file `syllabus.pdf` is the
-generated output.
+in the root of the repository builds the pdf.
+
+## Cleanup
 
 Typing
 
@@ -26,7 +46,15 @@ Typing
 make clean
 ```
 
-will remove all generated files.
+removes tex-generated files.
+
+Typing
+
+```
+make squeaky-clean
+```
+
+removes **every** generated file.
 
 ## License
 
