@@ -1,4 +1,7 @@
 # latex-syllabus
+
+![Build](https://github.com/markroyer/latex-syllabus/actions/workflows/ci.yml/badge.svg)
+
 A simple latex course syllabus.
 
 This project is provided in the hopes that it may be useful to other
