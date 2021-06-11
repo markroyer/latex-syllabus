@@ -1,10 +1,26 @@
 name=syllabus
 
+dockerimage:=registry.gitlab.com/mark.e.royer/texlive-full-with-emacs:20200604
+dockeropts:=-u 1000:1000 -w /test \
+            -v $(CURDIR):/test \
+            -v /etc/group:/etc/group:ro \
+            -v /etc/passwd:/etc/passwd:ro \
+            -it --rm
+
+
 .PHONY: clean squeaky-clean
 
 $(name).pdf: $(name).tex
 	latexmk -pdf -shell-escape $(name).tex
 
+# Start docker and leave open
+startdocker:
+	docker run $(dockeropts) $(dockerimage)
+
+# If you don't want to keep the container alive, build the default
+# make target and exit.
+startdocker-build:
+	docker run $(dockeropts) $(dockerimage) make
 
 clean:
 	latexmk -c $(name).tex
