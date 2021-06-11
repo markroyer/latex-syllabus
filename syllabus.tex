@@ -12,6 +12,7 @@
 \usepackage{multirow}
 \usepackage[pdftex]{graphicx}
 \usepackage{setspace}
+\usepackage{svg}
 \usepackage{tabularx}
 \usepackage{termcal}
 \usepackage{xcolor}
@@ -74,24 +75,41 @@
 
 \begin{document}
 
+% This has to be rendered here because \includesvg does not work in
+% the \tabularx environment
+\newsavebox{\umainelogo}
+\begin{lrbox}{\umainelogo}
+  \begin{minipage}{3in}
+    \includesvg[width=3in]{umaine}
+  \end{minipage}
+\end{lrbox}
+
+\newsavebox{\cslogo}
+\begin{lrbox}{\cslogo}
+  \begin{minipage}{1.5in}
+    \includegraphics[width=1.5in]{csLogo.pdf}
+  \end{minipage}
+\end{lrbox}
+
+
 
 { % Don't indent the table
-\setlength\parindent{0pt}
-\begin{tabularx}{\textwidth}{@{}l@{}X@{}r@{}}
-  \tf{COS 221}
-  & \multirow{3}{*}{} % White space hfill column
-  & \multirow{3}{*}{\includegraphics[height=.9in]{umaine}} \\ 
-  \tf{Data Structures in C++} &  \\
-  \tf{MWF, 8-8:50AM, Neville Hall 227} & \\\\
-  \large Mark Royer
-  & \multirow{6}{*}{} % White space hfill column
-  & \multirow{6}{*} {\includegraphics[height=1in]{csLogo.pdf}} \\
-  \large \href{mailto:mark.royer@maine.edu}{mark.royer@maine.edu} & \\
-  \large \url{http://cs.umaine.edu/~mroyer} & \\
-  \large East Annex 223 \& 225 & \\
-  \large Office Hours: MW 1-4pm & \\
-  \large (207) 555-1234 & \\
-\end{tabularx}
+  \setlength\parindent{0pt}
+  \begin{tabularx}{\textwidth}{@{}l@{}X@{}r@{}}
+    \tf{COS 221}
+    & \multirow{3}{*}{} % White space hfill column
+    & \multirow{3}{*}{\usebox\umainelogo} \\ 
+    \tf{Data Structures in C++} &  \\
+    \tf{MWF, 8-8:50AM, Neville Hall 227} & \\\\
+    \large Mark Royer
+    & \multirow{6}{*}{} % White space hfill column
+    & \multirow{6}{*} {\usebox\cslogo} \\
+    \large \href{mailto:mark.royer@maine.edu}{mark.royer@maine.edu} & \\
+    \large \url{http://cs.umaine.edu/~mroyer} & \\
+    \large East Annex 223 \& 225 & \\
+    \large Office Hours: MW 1-4pm & \\
+    \large (207) 555-1234 & \\
+  \end{tabularx}
 } % End parindent 0
 \subsection*{Note}
 \label{sec:note}
