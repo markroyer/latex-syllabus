@@ -278,6 +278,29 @@ classes will be filled out as the class progresses.
 \section*{Tentative Schedule:}
 \label{sec:sched}
 
+
+\renewcommand{\calprintdate}{%
+  \ifdefined\HCode
+  {\HCode{<span class="caldate">}}
+  \ifnewmonth\framebox{\textbf{\monthname\ \ordinaldate}}%
+  \else \textbf{\ordinaldate}\fi
+  {\HCode{</span>} }
+  \else
+  \ifnewmonth\framebox{\textbf{\monthname\ \ordinaldate}}%
+  \else \textbf{\ordinaldate}\fi
+  \fi
+}
+
+\renewcommand{\calprintclass}{%
+  \ifdefined\HCode
+  {\HCode{<span class="calday">}}
+  \textbf{\small\theclassnum}
+  {\HCode{</span>} }
+  \else
+  \textbf{\small\theclassnum}
+  \fi
+}
+
 \begin{center}
 \begin{calendar}{9/2/2013}{16} % Semester starts on 9/3/2013 and last for 16
                     % weeks, including finals week
