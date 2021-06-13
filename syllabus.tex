@@ -278,10 +278,12 @@ classes will be filled out as the class progresses.
 \section*{Tentative Schedule:}
 \label{sec:sched}
 
-
+% The following command customizes the date in each cell.  If we check
+% for \HCode, then we know that we are exporting using htlatex, and we
+% can add some additional html markup.
 \renewcommand{\calprintdate}{%
   \ifdefined\HCode
-  {\HCode{<span class="caldate">}}
+  {\HCode{<span class="calprintdate">}}
   \ifnewmonth\framebox{\textbf{\monthname\ \ordinaldate}}%
   \else \textbf{\ordinaldate}\fi
   {\HCode{</span>} }
@@ -291,9 +293,10 @@ classes will be filled out as the class progresses.
   \fi
 }
 
+% Similar to above, but this command is for the class number.
 \renewcommand{\calprintclass}{%
   \ifdefined\HCode
-  {\HCode{<span class="calday">}}
+  {\HCode{<span class="calprintclass">}}
   \textbf{\small\theclassnum}
   {\HCode{</span>} }
   \else
@@ -386,4 +389,4 @@ classes will be filled out as the class progresses.
 
 %  LocalWords:  MWF Neville ECE Liang VirtualBox gEdit DDD fstream OO
 %  LocalWords:  Destructors endl STL Polymorphism Bitwise Doxygen AVL
-%  LocalWords:  LinkedList
+%  LocalWords:  LinkedList umaine csLogo calprintdate calprintclass
