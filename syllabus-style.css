@@ -1,0 +1,64 @@
+/*
+Additionally style for specific elements.  You will likely have to
+modify this to match any document changes.
+
+This file is appended to the end of syllabus.css after the HTML page
+is generated.
+*/
+
+
+table#TBL-2 {
+  width: 100%;
+}
+
+table#TBL-2 td {
+  vertical-align: top;
+}
+
+td#TBL-2-1-3 img {
+  width: 300px;
+  float: right;
+}
+
+td#TBL-2-2-3 img {
+  width: 150px;
+  float: right;
+}
+
+
+tr#TBL-5-1- p {
+  font-variant: small-caps;
+  text-align: center;
+  font-size: x-large;  
+}
+
+table#TBL-5 .fbox {
+  font-weight: bold;
+}
+
+table#TBL-5, table#TBL-5 td {
+  border: 1px solid black;
+}
+
+table#TBL-5 tr.hline {
+  display: none;
+}
+
+.calprintdate {
+  /* font-weight: bold;  */
+}
+
+.calprintclass {
+  float: right;
+  font-weight: bold; 
+}
+
+/*
+  Example of removing empty/extra termcal table rows.
+*/
+tr#TBL-5-19-, tr#TBL-5-20-, tr#TBL-5-21-, tr#TBL-5-22-, tr#TBL-5-23- {
+  display: none;
+}
+
+/* LocalWords:  TBL td img px fbox calprintdate termcal
+*/
