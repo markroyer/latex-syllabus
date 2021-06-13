@@ -8,10 +8,15 @@ dockeropts:=-u 1000:1000 -w /test \
             -it --rm
 
 
-.PHONY: clean squeaky-clean
+.PHONY: clean squeaky-clean startdocker startdocker-build startdocker-build-html
 
 $(name).pdf: $(name).tex
 	latexmk -pdf -shell-escape $(name).tex
+
+$(name).html: $(name).tex $(name)-style.css
+	htlatex syllabus.tex "xhtml,NoFonts"
+	cp style.css $(name).css
+	cat $(name)-style.css >> $(name).css
 
 # Start docker and leave open
 startdocker:
@@ -22,9 +27,12 @@ startdocker:
 startdocker-build:
 	docker run $(dockeropts) $(dockerimage) make
 
+startdocker-build-html:
+	docker run $(dockeropts) $(dockerimage) make $(name).html
+
 clean:
 	latexmk -c $(name).tex
 	rm -rf *~ auto/ svg-inkscape/ \
-	$(addprefix $(NAME),.4ct .4tc .css .dvi .fdb_latexmk .fls.html .idv .lg .tmp .xref)
+	$(addprefix $(name),.4ct .4tc .css .dvi .fdb_latexmk .fls.html .idv .lg .tmp .xref)
 squeaky-clean: clean
-	rm -f $(name).pdf
+	rm -f $(name).pdf $(name).html
