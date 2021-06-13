@@ -75,6 +75,8 @@
 
 \begin{document}
 
+
+
 % This has to be rendered here because \includesvg does not work in
 % the \tabularx environment
 \newsavebox{\umainelogo}
@@ -92,25 +94,29 @@
 \end{lrbox}
 
 
-
 { % Don't indent the table
   \setlength\parindent{0pt}
-  \begin{tabularx}{\textwidth}{@{}l@{}X@{}r@{}}
-    \tf{COS 221}
-    & \multirow{3}{*}{} % White space hfill column
-    & \multirow{3}{*}{\usebox\umainelogo} \\ 
-    \tf{Data Structures in C++} &  \\
-    \tf{MWF, 8-8:50AM, Neville Hall 227} & \\\\
-    \large Mark Royer
-    & \multirow{6}{*}{} % White space hfill column
-    & \multirow{6}{*} {\usebox\cslogo} \\
-    \large \href{mailto:mark.royer@maine.edu}{mark.royer@maine.edu} & \\
-    \large \url{http://cs.umaine.edu/~mroyer} & \\
-    \large East Annex 223 \& 225 & \\
-    \large Office Hours: MW 1-4pm & \\
-    \large (207) 555-1234 & \\
+  \begin{tabularx}{\textwidth}{@{}l X r@{}}
+    \begin{minipage}{3in}
+      \tf{COS 221}\\      
+      \tf{Data Structures in C++} \\
+      \tf{MWF, 8-8:50AM, Neville Hall 227} \\\\
+    \end{minipage}
+    & % White space hfill column
+    & {\usebox\umainelogo} \\
+    \begin{minipage}{3in}
+      \large Mark Royer \\
+      \large \href{mailto:mark.royer@maine.edu}{mark.royer@maine.edu} \\
+      \large \url{http://cs.umaine.edu/~mroyer} \\
+      \large East Annex 223 \& 225 \\
+      \large Office Hours: MW 1-4pm \\
+      \large (207) 555-1234 \\    
+    \end{minipage}
+    & % White space hfill column
+    & {\usebox\cslogo}
   \end{tabularx}
 } % End parindent 0
+
 \subsection*{Note}
 \label{sec:note}
 
@@ -157,7 +163,7 @@ searching algorithms are discussed. \\
     87.00 - 89.99 & B+  & 67.00 - 69.99 & D+ \\
     83.00 - 86.99 & B  & 63.00 - 66.99 & D \\
     80.00 - 82.99 & B-  & 60.00 - 62.99 & D- \\
-    77.00 - 79.99 & C+  & \textless= 59.99 & F \\
+    77.00 - 79.99 & C+  & \textless= 59.99 & F
   \end{tabular}  
 \end{center}
 
